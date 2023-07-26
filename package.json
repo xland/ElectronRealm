@@ -1,0 +1,20 @@
+{
+  "name": "electron-realm",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "node ./script/develop.js",
+    "release": "node ./script/release.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^25.3.1",
+    "esbuild": "^0.18.16",
+    "html-minifier-terser": "^7.2.0",
+    "realm": "^11.10.1"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1"
+  }
+}
