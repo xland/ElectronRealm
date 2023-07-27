@@ -40,6 +40,9 @@ let startElectron = async ()=>{
     child.stdout.on('data', (data) => {
         console.log(data.toString("utf8"));
     });
+    child.stdout.on('error', (data) => {
+        console.log(data.toString("utf8"));
+    });
     child.on("close", () => {
         process.exit();
       });

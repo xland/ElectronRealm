@@ -1,9 +1,9 @@
 import {app, BrowserWindow,ipcMain} from "electron";
-import db from "../common/db"
 import path from "path";
 import fsex from "fs-extra"
 import crypto from "crypto"
 import { ModelUser } from "../common/ModelUser";
+import { dbUser } from "../common/dbUser";
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = "true";
 let wins:BrowserWindow[] = [];
 
@@ -26,12 +26,14 @@ let creatreWindow = async ()=>{
 }
 
 
-let initUser = async ()=>{    
+let initUser = async ()=>{   
+    console.log(111); 
     let user = new ModelUser();
     user.UserName = "李清照"
-    let insert = db.prepare('INSERT INTO User (ID, UserName) VALUES (@ID, @UserName)');
-    insert.run(user);
-    console.log(user);
+    dbUser.insert(user);
+    console.log(222); 
+    let a = dbUser.select()
+    console.log(a);
 }
 
 // let initMessage = async ()=>{
