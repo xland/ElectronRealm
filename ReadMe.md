@@ -16,5 +16,6 @@
 - 主进程、渲染进程复用Common下的代码
 - 分层方便单元测试
 - 数据库操作失败，没有错误信息
+- 重新编译一下better-sqlite3-multiple-ciphers，.node文件的路径要处理一下
 
 
