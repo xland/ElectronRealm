@@ -1,5 +1,5 @@
 import crypto from "crypto"
-export class Model{
+export class ModelBase{
     ID:string
     constructor(){
         this.ID = crypto.randomUUID()

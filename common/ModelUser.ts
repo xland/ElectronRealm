@@ -1,5 +1,5 @@
-import {Model} from "./Model"
-export class ModelUser extends Model {
+import {ModelBase} from "./ModelBase"
+export class ModelUser extends ModelBase {
     UserName:string
     constructor(){
       super();

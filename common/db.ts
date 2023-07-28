@@ -14,7 +14,7 @@ let openDb = (dbPath:string)=>{
     db = new Database(dbPath,{
         timeout:8000,
         verbose:(sql)=>{
-            console.log(sql)
+            // console.log(sql)
         }
     })
     db.pragma(`key='${getKey()}'`);
@@ -24,12 +24,14 @@ let createDb = (dbPath:string)=>{
     db = new Database(dbPath,{
         timeout:8000,
         verbose:(sql)=>{
-            console.log(sql)
+            // console.log(sql)
         }
     })    
     db.pragma(`rekey='${getKey()}'`);
     db.pragma('journal_mode = WAL');
-    let sql = `CREATE TABLE User(ID VARCHAR2(38),UserName VARCHAR2(60));`
+    let sql = `CREATE TABLE User(ID VARCHAR2(38) PRIMARY KEY,UserName VARCHAR2(60));
+    CREATE TABLE Message(ID VARCHAR2(38) PRIMARY KEY,Content TEXT,FromUserId VARCHAR2(38),ToUserId VARCHAR2(38),SendTime INT64);
+    `
     db.exec(sql);
 }
 let init = ()=>{
